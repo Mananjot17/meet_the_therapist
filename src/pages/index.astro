@@ -1,0 +1,240 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Manmeet Kaur - Clinical Psychologist">
+	<main>
+		<section class="hero">
+			<div class="hero-content">
+				<h1>Meet the therapist</h1>
+				<p>Providing compassionate and evidence-based psychological care in a safe, supportive environment.</p>
+				<a href="/contact" class="cta-button">Book A Session For Me</a>
+			</div>
+		</section>
+
+		<section class="services">
+			<h2>Why Meet the Therapist?</h2>
+			<div class="service-grid">
+				<div class="service-card">
+					<h1>ONLINE COUNSELLING</h1>
+					<p>Online counselling and therapy sessions available for your convenience.</p>
+				</div>
+				<div class="service-card">
+					<h1>CONFIDENTIALITY AND PRIVACY</h1>
+					<p>We prioritize your privacy and respect your trust. Your information remains protected, allowing you
+to explore concerns freely and openly.</p>
+				</div>
+				<div class="service-card">
+					<h1>CLIENT CENTRIC APPROACH</h1>
+					<p>We prioritize understanding your unique needs and goals, tailoring our expertise to create a
+personalized journey.</p>
+				</div>
+			
+			</div>
+		</section>
+
+		<section class="book-session">
+			<div class="book-session-content">
+				<h2>Ready to Take the First Step?</h2>
+				<p>Begin your journey to better mental health today.</p>
+				<a href="/contact" class="cta-button">Book a Session</a>
+			</div>
+		</section>
+
+		<section class="about-preview">
+			<div class="about-content">
+
+				<div class="about-image">
+					<img src="/images/profile.jpeg" alt="Manmeet Kaur" />
+				</div>
+				
+				<div class="about-text">
+					<h2>About Manmeet Kaur</h2>
+					<p>With over 4 years of experience, I specialize in helping adults navigate life's challenges through evidence-based therapeutic approaches. My practice focuses on creating a warm, accepting environment where you can feel safe to explore your thoughts and feelings.</p>
+					<a href="/about" class="learn-more">Learn More About My Approach →</a>
+				</div>
+			</div>
+		</section>
+	</main>
+</Layout>
+
+<style>
+	main {
+		color: var(--text);
+	}
+	.hero {
+		background-image: url('/images/hero-bg.jpg');
+		background-size: cover;
+		background-position: center;
+		position: relative;
+		color: white;
+		padding: 8rem 2rem;
+		min-height: 100vh;
+		display: flex;
+		align-items: center;
+	}
+	/* Dark overlay */
+	.hero::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: rgba(41, 42, 36, 0.35); /* Using primary color with opacity */
+		z-index: 1;
+	}
+	.hero-content {
+		position: relative;
+		z-index: 2;
+		max-width: 800px;
+		margin: 0 auto;
+		text-align: center;
+	}
+	.hero h1 {
+		font-size: 3.5rem;
+		color: white;
+		margin-bottom: 1.5rem;
+	}
+	.hero p {
+		font-size: 1.25rem;
+		margin-bottom: 2rem;
+		line-height: 1.6;
+	}
+	.cta-button {
+		display: inline-block;
+		background: white;
+		color: var(--primary);
+		padding: 1rem 2rem;
+		border-radius: 30px;
+		text-decoration: none;
+		font-weight: 600;
+		transition: transform 0.3s ease;
+	}
+	.cta-button:hover {
+		transform: translateY(-2px);
+	}
+	.services {
+		padding: 4rem 2rem;
+		max-width: 1200px;
+		margin: 0 auto;
+	}
+	.services h2 {
+		text-align: center;
+		margin-bottom: 3rem;
+	}
+	.service-grid {
+		display: grid;
+		padding: 2rem;
+		border-radius:25px;
+		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+		gap: 2rem;
+		justify-content:center;
+		
+	}
+	.service-card {
+		background: #FFFFFF;
+		padding: 2rem;
+		border-radius: 25px;
+		box-shadow: 0 14px 25px rgba(0, 0, 0, .2);
+		transition: transform 0.3s ease;
+	}
+	.service-card:hover {
+		transform: translateY(-5px);
+	}
+	.service-card h1 {
+		margin-bottom: 1rem;
+		
+	}
+
+	.book-session {
+		background: #B3A08F;
+		color: white;
+		padding: 4rem 2rem;
+		text-align: center;
+		margin: 4rem 0;
+	}
+	.book-session-content {
+		max-width: 800px;
+		margin: 0 auto;
+	}
+	.book-session h2 {
+		color: white;
+		margin-bottom: 1rem;
+		font-size: 2.5rem;
+	}
+	.book-session p {
+		margin-bottom: 2rem;
+		font-size: 1.2rem;
+	}
+	.book-session .cta-button {
+		background: white;
+		color: var(--primary);
+		font-size: 1.1rem;
+		padding: 1.2rem 2.5rem;
+	}
+
+	.about-preview {
+		padding: 4rem 2rem;
+	}
+	.about-content {
+		max-width: 1000px;
+		margin: 0 auto;
+		display: grid;
+		grid-template-columns: 300px 1fr;
+		gap: 4rem;
+		align-items: center;
+	}
+	.about-image {
+		width: 100%;
+		height: 300px;
+		border-radius: 50%;
+		overflow: hidden;
+		box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+	}
+	.about-image img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+	.about-text {
+		text-align: left;
+	}
+	.about-text h2 {
+		margin-bottom: 1.5rem;
+	}
+	.about-text p {
+		margin-bottom: 2rem;
+		line-height: 1.6;
+	}
+	.learn-more {
+		color: var(--primary);
+		text-decoration: none;
+		font-weight: 600;
+	}
+	.learn-more:hover {
+		text-decoration: underline;
+	}
+
+	@media (max-width: 768px) {
+		.hero h1 {
+			font-size: 2.5rem;
+		}
+		.service-grid {
+			grid-template-columns: 1fr;
+		}
+		.about-content {
+			grid-template-columns: 1fr;
+			text-align: center;
+			gap: 2rem;
+		}
+		.about-image {
+			width: 250px;
+			height: 250px;
+			margin: 0 auto;
+		}
+		.about-text {
+			text-align: center;
+		}
+	}
+</style>

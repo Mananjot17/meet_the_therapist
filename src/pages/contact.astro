@@ -1,0 +1,102 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ContactForm from '../components/ContactForm.astro';
+---
+
+<Layout title="Contact - Manmeet Kaur">
+	<main>
+		<section class="contact-header">
+			<h1>Contact Me</h1>
+			<p>Get in touch to schedule a consultation or learn more about my services.</p>
+		</section>
+
+		<section class="contact-content">
+			<div class="contact-info">
+				<div class="info-card">
+					<h2>Contact Information</h2>
+					<p>Phone: +91 6377418667</p>
+					<p>Email: therapistmanmeet@gmail.com</p>
+				</div>
+
+				<div class="info-card">
+					<h2>Hours</h2>
+					<p>Monday - Saturday: 9:00 AM - 12:00 AM</p>
+					<p>Sunday: As per appointments</p>
+				</div>
+			</div>
+
+			<ContactForm />
+		</section>
+	</main>
+</Layout>
+
+<style>
+	.contact-header {
+		background: #B3A08F;
+		color: white;
+		padding: 8rem 2rem;
+		text-align: center;
+	}
+	.contact-header h1 {
+		color: white;
+		margin-bottom: 1rem;
+	}
+	.contact-content {
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 4rem 2rem;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 4rem;
+	}
+	.contact-info {
+		display: grid;
+		gap: 2rem;
+		
+	}
+	.info-card {
+		background: #F7FAFC;
+		padding: 2rem;
+		border-radius: 8px;
+		box-shadow: 0 14px 25px rgba(0, 0, 0, .2);
+	}
+	.info-card h2 {
+		margin-bottom: 1rem;
+		font-size: 1.5rem;
+	}
+	.info-card p {
+		margin-bottom: 0.5rem;
+	}
+	
+	label {
+		display: block;
+		margin-bottom: 0.5rem;
+		color: var(--secondary);
+	}
+	input, textarea {
+		width: 100%;
+		padding: 0.75rem;
+		border: 1px solid #E2E8F0;
+		border-radius: 4px;
+		font-family: inherit;
+	}
+	button {
+		background: var(--primary);
+		color: white;
+		padding: 1rem 2rem;
+		border: none;
+		border-radius: 4px;
+		font-weight: 600;
+		cursor: pointer;
+		transition: background-color 0.3s ease;
+	}
+	button:hover {
+		background: #1A365D;
+	}
+
+	@media (max-width: 768px) {
+		.contact-content {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>

@@ -1,0 +1,172 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Services - Manmeet Kaur">
+	<main>
+		<section class="hero">
+			<div class="hero-content">
+				<h1>My services</h1>
+				<p>Providing compassionate and evidence-based psychological care in a safe, supportive environment.</p>
+				
+			</div>
+		</section>
+
+		<section class="services">
+			<h2>Services Offered</h2>
+			<div class="service-grid">
+				<div class="service-card">
+					<h3>Anxiety</h3>
+					<p>Anxiety can feel overwhelming, leaving you restless, worried, and unable to focus. I help individuals manage these feelings by identifying triggers, challenging unhelpful thoughts, and building coping strategies to regain control and inner peace.</p>
+				</div>
+				<div class="service-card">
+					<h3>Depression</h3>
+					<p>Depression drains your energy and joy, making even daily tasks feel impossible. With compassionate support, I guide clients to uncover the root causes, develop healthier thought patterns, and find meaning and purpose in life again.</p>
+				</div>
+				<div class="service-card">
+					<h3>Post-Traumatic Stress Disorder</h3>
+					<p>Traumatic experiences can leave lasting emotional scars. Through evidence-based therapies, I help clients process trauma, reduce distressing memories, and regain a sense of safety and stability in their lives.</p>
+				</div>
+				<div class="service-card">
+					<h3>Substance Use Disorders</h3>
+					<p>Breaking free from substance use can feel overwhelming, but recovery is possible. I provide a non-judgmental space to address the root causes of addiction, develop healthier coping mechanisms, and rebuild a life filled with purpose and resilience.</p>
+				</div>
+				<div class="service-card">
+					<h3>OCD</h3>
+					<p>Obsessive-compulsive disorder often involves intrusive thoughts and repetitive behaviors. Together, we will work to break the cycle of obsessions and compulsions, helping you reclaim control and live with greater freedom.</p>
+				</div>
+				<div class="service-card">
+					<h3>Psychosis</h3>
+					<p>Experiencing psychosis can be isolating and distressing. I provide a safe and supportive space to address hallucinations, delusions, and disorganized thinking, offering strategies to improve daily functioning and well-being.</p>
+				</div>
+				<div class="service-card">
+					<h3>Relationship Issues</h3>
+					<p>Struggles in relationships can affect every aspect of life. I help clients improve communication, rebuild trust, and navigate conflicts to foster healthier and more fulfilling connections.</p>
+				</div>
+				<div class="service-card">
+					<h3>Anger Management</h3>
+					<p>Struggling with anger can impact your relationships and overall well-being. Anger management therapy helps you understand your triggers, develop healthier coping strategies, and express emotions constructively. Together, we can work toward fostering emotional balance and improving your quality of life.</p>
+				</div>
+				<div class="service-card">
+					<h3>Neurodevelopmental Disorders</h3>
+					<p>Each child is unique, and conditions like ADHD, Autism, and Intellectual Disabilities can influence how they learn, communicate, and interact with others. I provide individualized support to help children harness their strengths, develop key skills, and create a nurturing environment where they can flourish and build confidence in their abilities.</p>
+				</div>
+			</div>
+		</section>
+		
+
+		<section class="insurance">
+			<h2>Fees</h2>
+			<p>I offer sliding scale fees. Please contact me to discuss payment options.</p>
+			<a href="/contact" class="contact-button">Contact for Details</a>
+		</section>
+	</main>
+</Layout>
+
+<style>
+
+.hero {
+		background-image: url('/images/hero-bg.jpg');
+		background-size: cover;
+		background-position: center;
+		position: relative;
+		color: white;
+		padding: 8rem 2rem;
+		min-height: 100vh;
+		display: flex;
+		align-items: center;
+	}
+	/* Dark overlay */
+	.hero::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: rgba(41, 42, 36, 0.35); /* Using primary color with opacity */
+		z-index: 1;
+	}
+	.hero-content {
+		position: relative;
+		z-index: 2;
+		max-width: 800px;
+		margin: 0 auto;
+		text-align: center;
+	}
+	.hero h1 {
+		font-size: 3.5rem;
+		color: white;
+		margin-bottom: 1.5rem;
+	}
+	.hero p {
+		font-size: 1.25rem;
+		margin-bottom: 2rem;
+		line-height: 1.6;
+	}
+
+	.services {
+		padding: 4rem 2rem;
+		max-width: 1200px;
+		margin: 0 auto;
+	}
+	.services h2 {
+		text-align: center;
+		margin-bottom: 3rem;
+	}
+	.service-grid {
+		display: grid;
+		padding: 2rem;
+		border-radius:25px;
+		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+		gap: 2rem;
+		box-shadow: 0 14px 25px rgba(0, 0, 0, .2);
+	}
+	.service-card {
+		background: #B3A08F;
+		padding: 2rem;
+		border-radius: 8px;
+		box-shadow: 0 14px 25px rgba(0, 0, 0, .2);
+		transition: transform 0.3s ease;
+	}
+	.service-card:hover {
+		transform: translateY(-5px);
+	}
+	.service-card h3 {
+		margin-bottom: 1rem;
+	}
+	
+	
+	.insurance {
+		background: #F7FAFC;
+		padding: 4rem 2rem;
+		text-align: center;
+	}
+	.insurance h2 {
+		margin-bottom: 1rem;
+	}
+	.insurance p {
+		max-width: 800px;
+		margin: 0 auto 2rem auto;
+		line-height: 1.6;
+	}
+	.contact-button {
+		display: inline-block;
+		background: var(--primary);
+		color: white;
+		padding: 1rem 2rem;
+		border-radius: 4px;
+		text-decoration: none;
+		font-weight: 600;
+		transition: background-color 0.3s ease;
+	}
+	.contact-button:hover {
+		background: #1A365D;
+	}
+
+	@media (max-width: 768px) {
+		.services-content {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>
