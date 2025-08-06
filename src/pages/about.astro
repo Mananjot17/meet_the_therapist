@@ -1,90 +1,150 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="About - Manmeet Kaur">
-	<main>
-		<section class="about-header">
-			<h1>About Manmeet Kaur</h1>
-		</section>
+  <main>
+    <section class="page-header">
+      <h2>About Manmeet Kaur</h2>
+    </section>
 
-		<section class="about-content">
-			<div class="profile">
-				<div class="profile-text">
-					<h2>Education & Credentials</h2>
-					<ul>
-						<li>Pursuing Ph.D. in Cognitive Neuroscience, IIT Bombay</li>
-						<li>Licensed Clinical Psychologist (RCI Registered)</li>
-						<li>NET-JRF Qualified</li>
-						<li>4 Years of Clinical Experience</li>
-						<li>Certified in Basics of Addiction Management</li>
-						<li>Certified in Rational Emotive Behavior Therapy (REBT)</li>
+    <section class="about-content">
+      <div class="container">
+        <div class="profile-grid">
+          <div class="profile-section">
+            <h2>My Approach to Therapy</h2>
+            <p>
+              My core belief is that a strong, trusting therapeutic relationship
+              is the foundation for change. I am committed to creating a safe,
+              empathetic, and non-judgmental space where you feel heard and
+              understood. My approach is collaborative and client-centered,
+              meaning your unique needs and goals are always at the forefront of
+              our work together.
+            </p>
+            <ul>
+              <li>
+                <strong>Comprehensive Initial Assessment:</strong> We begin by exploring
+                your history, concerns, and expectations to collaboratively define
+                meaningful short-term and long-term goals.
+              </li>
+              <li>
+                <strong>Evidence-Based Interventions:</strong> I utilize proven therapeutic
+                techniques to help you understand and work through your thoughts,
+                emotions, and behaviors, empowering you with lasting skills.
+              </li>
+              <li>
+                <strong>Holistic and Adaptive Therapy:</strong> I adapt my methods
+                to address a wide range of issues, from anxiety and depression to
+                trauma and stress, always focusing on your overall well-being.
+              </li>
+              <li>
+                <strong>In-Depth Assessments:</strong> To gain deeper insight, I
+                may use evidence-based tools like personality tests and diagnostic
+                measures to inform our therapeutic process effectively.
+              </li>
+            </ul>
+          </div>
 
-					</ul>
-
-					<h2>My Approach</h2>
-					<ul>
-						<li>Person-Centered and Collaborative Approach: I prioritize creating a safe, empathetic, and non-judgmental environment to foster trust and rapport. My approach is client-centered, ensuring that your unique needs and goals guide the therapeutic process.</li>
-						<li>Comprehensive Initial Assessment: In the initial sessions, I focus on understanding your history, exploring your concerns, and clarifying your expectations. Together, we define long-term and short-term goals tailored to your individual circumstances.</li>
-						<li>Evidence-Based Interventions: Utilizing evidence-based therapeutic techniques, I help you explore and work on your thoughts, behaviors, and emotions. My aim is to empower you with tools and strategies to overcome challenges and achieve personal growth.</li>
-						<li>Holistic and Adaptive Therapy: I adapt my interventions to address a wide range of issues, such as anxiety, depression, trauma, and stress management, while ensuring a holistic focus on your well-being.</li>
-						<li>In-Depth Assessments: To gain a deeper understanding of your symptoms and personality, I utilize evidence-based assessment tools, including personality tests, projective tests, rating scales, and other diagnostic measures. These tools provide valuable insights to inform the therapeutic process.</li>
-					</ul>
-
-					<h2>Areas of Expertise</h2>
-					<ul>
-						<li>Anxiety and Depression</li>
-						<li>Trauma and PTSD</li>
-						<li>Relationship Issues</li>
-						<li>Life Transitions</li>
-						<li>Stress Management</li>
-						<li>Substance Use</li>
-						<li>ADHD and Autism</li>
-						<li>Anger Management</li>
-					</ul>
-				</div>
-			</div>
-		</section>
-	</main>
+          <aside class="profile-sidebar">
+            <div class="sidebar-card">
+              <h3>Education & Credentials</h3>
+              <ul>
+                <li>Pursuing Ph.D. in Cognitive Neuroscience, IIT Bombay</li>
+                <li>Licensed Clinical Psychologist (RCI Registered)</li>
+                <li>NET-JRF Qualified</li>
+                <li>4 Years of Clinical Experience</li>
+                <li>Certified in Basics of Addiction Management</li>
+                <li>Certified in Rational Emotive Behavior Therapy (REBT)</li>
+              </ul>
+            </div>
+            <div class="sidebar-card">
+              <h3>Areas of Expertise</h3>
+              <ul>
+                <li>Anxiety and Depression</li>
+                <li>Trauma and PTSD</li>
+                <li>Relationship Issues</li>
+                <li>Stress Management</li>
+                <li>Substance Use</li>
+                <li>ADHD, Autism</li>
+                <li>Anger Management</li>
+              </ul>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
 </Layout>
 
 <style>
-	.about-header {
-		background: #B3A08F;
-		color: white;
-		padding: 8rem 2rem;
-		text-align: center;
-	}
-	.about-header h1 {
-		color: white;
-		max-width: 800px;
-		margin: 0 auto;
-	}
-	.about-content {
-		max-width: 800px;
-		margin: 0 auto;
-		padding: 4rem 2rem;
-	}
-	.profile {
-		display: grid;
-		gap: 2rem;
-	}
-	.profile-text h2 {
-		margin: 2rem 0 1rem 0;
-	}
-	.profile-text h2:first-child {
-		margin-top: 0;
-	}
-	.profile-text p {
-		margin-bottom: 1.5rem;
-		line-height: 1.6;
-	}
-	.profile-text ul {
-		list-style-position: inside;
-		margin-bottom: 1.5rem;
-	}
-	.profile-text li {
-		margin-bottom: 0.5rem;
-		line-height: 1.6;
-	}
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .page-header {
+    background: #988677;
+    padding: 10rem 2rem 5rem;
+    text-align: center;
+  }
+
+  .page-header h2 {
+    color: white;
+  }
+
+  .about-content {
+    padding: 6rem 0;
+  }
+
+  .profile-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 4rem;
+  }
+
+  .profile-section h2 {
+    margin-bottom: 1.5rem;
+  }
+
+  .profile-section p,
+  .profile-section ul {
+    margin-bottom: 2rem;
+  }
+
+  .profile-section li {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+  }
+
+  .sidebar-card {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    margin-bottom: 2rem;
+  }
+
+  .sidebar-card h3 {
+    margin-bottom: 1.5rem;
+  }
+
+  .sidebar-card ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .sidebar-card li {
+    margin-bottom: 0.75rem;
+    line-height: 1.6;
+  }
+
+  @media (max-width: 992px) {
+    .profile-grid {
+      grid-template-columns: 1fr;
+    }
+    .profile-sidebar {
+      grid-row: 1; /* Moves sidebar to the top on mobile */
+    }
+  }
 </style>

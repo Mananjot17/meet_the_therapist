@@ -1,57 +1,61 @@
 ---
+// Note for the developer:
+// For a real clinical psychologist website, using emailjs is NOT HIPAA-compliant.
+// You must use a HIPAA-compliant form service (e.g., Hushmail, Paubox, Jotform's HIPAA plan)
+// to protect patient health information (PHI) and comply with legal requirements.
+// The code below is for visual demonstration only.
 ---
 
 <div class="contact-form">
-  <h2>Send a Message</h2>
+  <h3>Send a Secure Message</h3>
   <form id="contactForm">
     <div class="form-group">
       <label for="name">Name</label>
-      <input type="text" id="name" name="name" required>
+      <input type="text" id="name" name="name" required />
     </div>
-
     <div class="form-group">
       <label for="email">Email</label>
-      <input type="email" id="email" name="email" required>
+      <input type="email" id="email" name="email" required />
     </div>
-
     <div class="form-group">
-      <label for="phone">Phone</label>
-      <input type="tel" id="phone" name="phone">
+      <label for="phone">Phone (Optional)</label>
+      <input type="tel" id="phone" name="phone" />
     </div>
-
     <div class="form-group">
       <label for="message">Message</label>
       <textarea id="message" name="message" rows="5" required></textarea>
     </div>
-
-    <button type="submit">Send Message</button>
+    <button type="submit" class="cta-button">Send Message</button>
   </form>
-
   <div id="successPopup" class="popup">
     <div class="popup-content">
       <h3>Thank You!</h3>
-      <p>Your message has been sent successfully. Our counselor will contact you as soon as possible.</p>
-      <button onclick="closePopup()">Close</button>
+      <p>
+        Your message has been sent. Manmeet will be in touch with you shortly.
+      </p>
+      <button onclick="closePopup()" class="cta-button">Close</button>
     </div>
   </div>
 </div>
 
 <script>
-  import emailjs from '@emailjs/browser';
+  import emailjs from "@emailjs/browser";
 
-  // Initialize EmailJS with your public key
-  emailjs.init("p9d9-jupBvZxSMTYb"); // You'll need to replace this with your actual public key
+  emailjs.init("p9d9-jupBvZxSMTYb"); // Replace with your public key
 
-  const form = document.getElementById('contactForm');
-  const popup = document.getElementById('successPopup');
+  const form = document.getElementById("contactForm");
+  const popup = document.getElementById("successPopup");
 
-  form?.addEventListener('submit', async (e) => {
+  form?.addEventListener("submit", async (e) => {
     e.preventDefault();
+    const submitButton = form.querySelector('button[type="submit"]');
+    submitButton.textContent = "Sending...";
+    submitButton.disabled = true;
 
     try {
       await emailjs.send(
-        "service_6bxecrh", // Replace with your EmailJS service ID
-        "template_g7i1mhj", // Replace with your EmailJS template ID
+        "service_6bxecrh", // Replace with your Service ID
+        "template_g7i1mhj", // Replace with your Template ID
         {
           to_email: "therapistmanmeet@gmail.com",
           from_name: form.name.value,
@@ -60,67 +64,82 @@
           message: form.message.value,
         }
       );
-
-      // Show success popup
-      popup?.classList.add('show');
-      
-      // Reset form
+      popup?.classList.add("show");
       form.reset();
-
     } catch (error) {
-      console.error('Error sending email:', error);
-      alert('There was an error sending your message. Please try again.');
+      console.error("Error sending email:", error);
+      alert("There was an error sending your message. Please try again later.");
+    } finally {
+      submitButton.textContent = "Send Message";
+      submitButton.disabled = false;
     }
   });
 
   window.closePopup = () => {
-    popup?.classList.remove('show');
+    popup?.classList.remove("show");
   };
 </script>
 
 <style>
   .contact-form {
-    background: white;
-    padding: 2rem;
+    background: var(--white);
+    padding: 2.5rem;
     border-radius: 8px;
-    box-shadow: 0 14px 25px rgba(0, 0, 0, .2);
+    border: 1px solid var(--border-color);
   }
-
-  .contact-form h2 {
+  .contact-form h3 {
     margin-bottom: 2rem;
   }
-
   .form-group {
     margin-bottom: 1.5rem;
   }
-
   label {
     display: block;
     margin-bottom: 0.5rem;
-    color: var(--secondary);
-  }
-
-  input, textarea {
-    width: 100%;
-    padding: 0.75rem;
-    border: 1px solid #E2E8F0;
-    border-radius: 4px;
-    font-family: inherit;
-  }
-
-  button {
-    background: var(--primary);
-    color: white;
-    padding: 1rem 2rem;
-    border: none;
-    border-radius: 4px;
     font-weight: 600;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+    color: var(--text-dark);
   }
-
-  button:hover {
-    background: #1A365D;
+  input,
+  textarea {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 1rem;
+    transition:
+      border-color 0.3s ease,
+      box-shadow 0.3s ease;
+  }
+  input:focus,
+  textarea:focus {
+    outline: none;
+    border-color: var(--primary-dark);
+    box-shadow: 0 0 0 2px rgba(44, 62, 80, 0.1);
+  }
+  .cta-button {
+    display: inline-block;
+    width: 100%;
+    background: var(--accent-color);
+    color: var(--white);
+    padding: 1rem 2.5rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition:
+      transform 0.3s ease,
+      background-color 0.3s ease;
+    border: none;
+    cursor: pointer;
+  }
+  .cta-button:hover {
+    transform: translateY(-3px);
+    background-color: #d35400;
+  }
+  .cta-button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
   }
 
   .popup {
@@ -130,36 +149,31 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 1000;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 2000;
     align-items: center;
     justify-content: center;
   }
-
   .popup.show {
     display: flex;
   }
-
   .popup-content {
-    background: white;
-    padding: 2rem;
+    background: var(--white);
+    padding: 3rem;
     border-radius: 8px;
     text-align: center;
-    max-width: 400px;
+    max-width: 450px;
     margin: 0 1rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   }
-
   .popup-content h3 {
     margin-bottom: 1rem;
   }
-
   .popup-content p {
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
   }
-
-  @media (max-width: 768px) {
-    .contact-form {
-      padding: 1.5rem;
-    }
+  .popup-content .cta-button {
+    width: auto;
+    padding: 0.8rem 2rem;
   }
 </style>

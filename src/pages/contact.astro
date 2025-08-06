@@ -1,102 +1,118 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import ContactForm from '../components/ContactForm.astro';
+import Layout from "../layouts/Layout.astro";
+import ContactForm from "../components/ContactForm.astro";
 ---
 
 <Layout title="Contact - Manmeet Kaur">
-	<main>
-		<section class="contact-header">
-			<h1>Contact Me</h1>
-			<p>Get in touch to schedule a consultation or learn more about my services.</p>
-		</section>
+  <main>
+    <section class="page-header">
+      <h2>Get In Touch</h2>
+      <p>
+        Get in touch to schedule a consultation or learn more about my services.
+      </p>
+    </section>
 
-		<section class="contact-content">
-			<div class="contact-info">
-				<div class="info-card">
-					<h2>Contact Information</h2>
-					<p>Phone: +91 6377418667</p>
-					<p>Email: therapistmanmeet@gmail.com</p>
-				</div>
-
-				<div class="info-card">
-					<h2>Hours</h2>
-					<p>Monday - Saturday: 9:00 AM - 12:00 AM</p>
-					<p>Sunday: As per appointments</p>
-				</div>
-			</div>
-
-			<ContactForm />
-		</section>
-	</main>
+    <section class="contact-layout">
+      <div class="container">
+        <div class="contact-grid">
+          <div class="contact-info">
+            <div class="info-card">
+              <h3>Contact Information</h3>
+              <p>
+                <strong>Phone:</strong>
+                <a href="tel:+916377418667">+91 6377418667</a>
+              </p>
+              <p>
+                <strong>Email:</strong>
+                <a href="mailto:therapistmanmeet@gmail.com"
+                  >therapistmanmeet@gmail.com</a
+                >
+              </p>
+            </div>
+            <div class="info-card">
+              <h3>Practice Hours</h3>
+              <p><strong>Monday - Saturday:</strong> 9:00 AM - 9:00 PM</p>
+              <p><strong>Sunday:</strong> Closed</p>
+              <p><small>Appointments are scheduled in advance.</small></p>
+            </div>
+          </div>
+          <div class="contact-form-wrapper">
+            <ContactForm />
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 </Layout>
 
 <style>
-	.contact-header {
-		background: #B3A08F;
-		color: white;
-		padding: 8rem 2rem;
-		text-align: center;
-	}
-	.contact-header h1 {
-		color: white;
-		margin-bottom: 1rem;
-	}
-	.contact-content {
-		max-width: 1200px;
-		margin: 0 auto;
-		padding: 4rem 2rem;
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-		gap: 4rem;
-	}
-	.contact-info {
-		display: grid;
-		gap: 2rem;
-		
-	}
-	.info-card {
-		background: #F7FAFC;
-		padding: 2rem;
-		border-radius: 8px;
-		box-shadow: 0 14px 25px rgba(0, 0, 0, .2);
-	}
-	.info-card h2 {
-		margin-bottom: 1rem;
-		font-size: 1.5rem;
-	}
-	.info-card p {
-		margin-bottom: 0.5rem;
-	}
-	
-	label {
-		display: block;
-		margin-bottom: 0.5rem;
-		color: var(--secondary);
-	}
-	input, textarea {
-		width: 100%;
-		padding: 0.75rem;
-		border: 1px solid #E2E8F0;
-		border-radius: 4px;
-		font-family: inherit;
-	}
-	button {
-		background: var(--primary);
-		color: white;
-		padding: 1rem 2rem;
-		border: none;
-		border-radius: 4px;
-		font-weight: 600;
-		cursor: pointer;
-		transition: background-color 0.3s ease;
-	}
-	button:hover {
-		background: #1A365D;
-	}
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
 
-	@media (max-width: 768px) {
-		.contact-content {
-			grid-template-columns: 1fr;
-		}
-	}
+  .page-header {
+    background: #988677;
+    padding: 10rem 2rem 5rem;
+    text-align: center;
+  }
+
+  .page-header h2 {
+    color: white;
+  }
+  .page-header p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 1rem auto 0;
+    color: white;
+  }
+
+  .contact-layout {
+    padding: 6rem 0;
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 3rem;
+    align-items: flex-start;
+  }
+
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .info-card {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+  }
+
+  .info-card h3 {
+    margin-bottom: 1.5rem;
+  }
+
+  .info-card p {
+    margin-bottom: 0.75rem;
+  }
+
+  .info-card a {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .info-card a:hover {
+    text-decoration: underline;
+  }
+
+  @media (max-width: 992px) {
+    .contact-grid {
+      grid-template-columns: 1fr;
+    }
+  }
 </style>
